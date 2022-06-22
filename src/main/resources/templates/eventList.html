@@ -1,0 +1,25 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org/">
+    <head>
+        <style>
+        table, th, td {
+        border: 1px solid;
+        }
+        </style>
+        <title>EVENT LIST!</title>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Date</th>
+            </tr>
+            <tr th:each="event : ${eventList}">
+                <td class="align-middle" th:text="${event.id}"></td>
+                <td class="align-middle" th:text="${event.title}"></td>
+                <td class="align-middle" th:text="${event.date}"></td>
+            </tr>
+        </table>
+    </body>
+</html>

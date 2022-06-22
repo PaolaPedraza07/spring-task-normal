@@ -1,0 +1,11 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org/">
+    <head>
+        <title>EVENT!</title>
+    </head>
+    <body>
+        <h1 th:text="${event != null} ? 'EVENT #' + ${event.id} : 'The event doesnt exist'">someValue</h1>
+        <h3 th:if="${event != null}" th:text="'TITLE: ' + ${event.title}"></h3>
+        <h3 th:if="${event != null}" th:text="'DATE:  ' + ${event.date }"></h3>
+    </body>
+</html>

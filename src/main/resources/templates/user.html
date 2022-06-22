@@ -1,0 +1,11 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <title>USER!</title>
+</head>
+<body>
+<h1 th:text="${user != null} ? 'USER #' + ${user.id} : 'The user doesnt exist'">someValue</h1>
+<h3 th:if="${user != null}" th:text="'NAME: ' + ${user.name}"></h3>
+<h3 th:if="${user != null}" th:text="'EMAIL:  ' + ${user.email }"></h3>
+</body>
+</html>

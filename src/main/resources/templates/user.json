@@ -1,0 +1,50 @@
+{
+"users":[
+  {
+    "id": 1,
+    "name": "Paola",
+    "email": "ppp@gmail.com"
+  },
+  {
+    "id": 2,
+    "name": "Jorge",
+    "email": "jjj@gmail.com"
+  },
+  {
+    "id": 3,
+    "name": "Alejandra",
+    "email": "ale@gmail.com"
+  },
+  {
+    "id": 4,
+    "name": "Fernando",
+    "email": "fernando@gmail.com"
+  },
+  {
+    "id": 5,
+    "name": "Lupita",
+    "email": "lupe@gmail.com"
+  },
+  {
+    "id": 6,
+    "name": "Lupita",
+    "email": "lupetest@gmail.com"
+  },
+  {
+    "id": 7,
+    "name": "Gabriel",
+    "email": "gabriel@gmail.com"
+  },
+  {
+    "id": 8,
+    "name": "Gabriel",
+    "email": "gabriel2222@gmail.com"
+  },
+  {
+    "id": 9,
+    "name": "Gabriel",
+    "email": "gabriel2gonzalez@gmail.com"
+  }
+
+]
+}

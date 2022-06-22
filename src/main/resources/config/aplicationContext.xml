@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"    xmlns:context="http://www.springframework.org/schema/context"    xsi:schemaLocation="
+    http://www.springframework.org/schema/beans       http://www.springframework.org/schema/beans/spring-beans-3.1.xsd    http://www.springframework.org/schema/context     http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+    <!-- BeanPostProcessors -->
+
+    <bean class="com.epam.springtask.postprocessor.EventBeanPostProcessor"/>
+    <bean class="com.epam.springtask.postprocessor.TicketBeanPostProcessor"/>
+    <bean class="com.epam.springtask.postprocessor.UserBeanPostProcessor"/>
+
+    <bean id="storage" class="com.epam.springtask.storage.AppStorage" >
+        <property name="events">
+            <map>
+            </map>
+        </property>
+        <property name="tickets">
+            <map>
+            </map>
+        </property>
+        <property name="users">
+            <map>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="eventDAO" class="com.epam.springtask.dao.EventDAO" >
+        <constructor-arg ref="storage" />
+    </bean>
+
+    <bean id="ticketDAO" class="com.epam.springtask.dao.TicketDAO" >
+        <constructor-arg ref="storage" />
+    </bean>
+
+    <bean id="userDAO" class="com.epam.springtask.dao.UserDAO" >
+        <constructor-arg ref="storage" />
+    </bean>
+
+    <bean id="eventService" class="com.epam.springtask.service.EventService">
+        <constructor-arg ref="eventDAO" />
+    </bean>
+
+    <bean id="ticketService" class="com.epam.springtask.service.TicketService">
+        <constructor-arg ref="ticketDAO" />
+    </bean>
+
+    <bean id="userService" class="com.epam.springtask.service.UserService">
+        <constructor-arg ref="userDAO" />
+    </bean>
+
+    <bean id="bookingFacadeImpl" class="com.epam.springtask.facade.BookingFacadeImpl">
+        <constructor-arg ref="eventService"/>
+        <constructor-arg ref="ticketService"/>
+        <constructor-arg ref="userService"/>
+    </bean>
+</beans>
